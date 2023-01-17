@@ -57,6 +57,13 @@ class PhotosController < ApplicationController
     end
   end
 
+  def liked 
+    @user = User.find_by!(username: params.fetch(:username))
+  end
+
+  def feed 
+    @user = current_user
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_photo
@@ -67,4 +74,6 @@ class PhotosController < ApplicationController
     def photo_params
       params.require(:photo).permit(:image, :comments_count, :likes_count, :caption, :owner_id)
     end
+
+
 end
