@@ -57,6 +57,15 @@ class FollowRequestsController < ApplicationController
     end
   end
 
+  def followers
+  @user = current_user
+  end
+
+  def following
+    @user = current_user
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_follow_request

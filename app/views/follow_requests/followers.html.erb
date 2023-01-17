@@ -1,0 +1,12 @@
+
+
+<%= render "shared/tabs" %>
+<h1>List of followers:</h1>
+<% @user.followers.each do |f| %>
+<ul>
+    <li>
+      <%= link_to "#{f.username}", user_path(f.username) %>
+    </li>
+</ul>
+
+<% end %>

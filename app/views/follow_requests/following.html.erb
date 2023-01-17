@@ -1,0 +1,15 @@
+
+
+<%= render "shared/tabs" %>
+<h1>Following list:</h1>
+<% @user.leaders.each do |f| %>
+ <ul>
+  
+    
+    <li>
+      <%= link_to "#{f.username}", user_path(f.username) %>
+    </li>
+
+</ul>
+
+<% end %>
