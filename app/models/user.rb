@@ -42,4 +42,8 @@ class User < ApplicationRecord
   has_many :discover, through: :leaders, source: :liked_photos
 
   validates :username, presence: true, uniqueness: true
+
+  current_user.discover.where(created_at: 1.week.ago...)
+
+  current_user.discover.order(likes_count: :desc)
 end
